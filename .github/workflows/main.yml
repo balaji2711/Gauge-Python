@@ -12,14 +12,17 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Install requirements
-        run: pip install -r requirements.txt
-        
+      - name: Install Python
+        run: |
+          choco install python
       - name: Install Gauge
         run: |
           choco install gauge
-      - name: Check Gauge Version
+      - name: Check Python & Gauge Version
         run: |
-          gauge version
+          gauge --version
+          python --version
+      - name: Install requirements
+        run: pip install -r requirements.txt
       - name: Run Tests   
         run: gauge run specs
