@@ -18,16 +18,21 @@ jobs:
       - name: Install Gauge
         run: |
           choco install gauge
+      - name: Python version
+        run: |
+          python --version
       - name: Install requirements
         run: pip install -r requirements.txt
       - name: Install reports
-        run: gauge install html-report
-             gauge install json-report
-             gauge install xml-report
-             gauge install spectacle
-             gauge install flash
+        run: |
+          gauge install html-report
+          gauge install json-report
+          gauge install xml-report
+          gauge install spectacle
+          gauge install flash
       - name: Run Tests   
-        run: gauge run specs
+        run: |
+          gauge run specs
       - name: create-report
         uses: michaelhenry/create-report@v2.0.0
         with:
