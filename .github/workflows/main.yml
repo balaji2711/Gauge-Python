@@ -18,6 +18,8 @@ jobs:
       - name: Install Gauge
         run: |
           choco install gauge
-      - name: Run Tests   
+      - name: Check Gauge Version
         run: |
-          gauge run specs
+          gauge version
+      - name: Run Tests   
+        run: gauge run specs
