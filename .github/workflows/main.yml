@@ -18,17 +18,14 @@ jobs:
         run: choco install gauge
       - name: Python version
         run: python --version
+      - name: Gauge Install Python
+        run: gauge install python
       - name: Install requirements
-        run: pip install -r requirements.txt
-      - name: PowerShell script
-        uses: Amadevus/pwsh-script@v2.0.1
-        with:
-          script:
-            gauge -v
-            gauge install html-report
-            gauge install xml-report
-            gauge install java
-            gauge run specs/
+        run: pip install -r requirements.txt	
+      - name: Install reports
+        run: gauge install xml-report
+      - name: Run Tests   
+        run: gauge run specs
       - name: create-report
         uses: michaelhenry/create-report@v2.0.0
         with:
