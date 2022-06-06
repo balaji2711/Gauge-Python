@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "*.spec": "gauge",
+        "*.cpt": "gauge"
+    },
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 500,
+    "python.testing.pytestArgs": [
+        "specs"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}
