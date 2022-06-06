@@ -18,9 +18,10 @@ jobs:
       - name: Install Gauge
         run: |
           choco install gauge
-          npm install -g @getgauge/cli
-      - name: Check Python & Gauge Version
+      - name: Check Python Version
         run: python --version
+      - name: Check Gauge Version
+        run: gauge -v
       - name: Install requirements
         run: pip install -r requirements.txt
       - name: Install reports
@@ -31,5 +32,7 @@ jobs:
              gauge install flash
       - name: Run Tests   
         run: gauge run specs
-      - name: Allure report
-        uses: afiore/action-allure-report@v0.1.0  
+      - name: create-report
+        uses: michaelhenry/create-report@v2.0.0
+        with:
+          title: Regression Report
