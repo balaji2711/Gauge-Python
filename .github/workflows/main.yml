@@ -18,10 +18,6 @@ jobs:
       - name: Install Gauge
         run: |
           choco install gauge
-      - name: Check Python Version
-        run: python --version
-      - name: Check Gauge Version
-        run: gauge -v
       - name: Install requirements
         run: pip install -r requirements.txt
       - name: Install reports
