@@ -23,9 +23,4 @@ jobs:
       - name: Install reports
         run: gauge install xml-report
       - name: Run Tests   
-        run: gauge run specs
-      - name: create-report
-        uses: michaelhenry/create-report@v2.0.0
-        with:
-          title: Regression Report
-          
+        run: gauge run specs/
