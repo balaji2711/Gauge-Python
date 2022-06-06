@@ -15,9 +15,11 @@ jobs:
       - name: Install requirements
         run: pip install -r requirements.txt
         
-      - name: Install Gauge
+      - name: Prep FTs
         run: |
-          gauge install  
+          git clone https://github.com/getgauge/gauge-tests
+          cd gauge-tests
+          gauge install 
       - name: Run Tests   
         run: |
           gauge run specs
