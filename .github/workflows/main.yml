@@ -14,6 +14,10 @@ jobs:
       - uses: actions/checkout@v3
       - name: Install requirements
         run: pip install -r requirements.txt
+        
+      - name: Install Gauge
+        run: |
+          gauge install  
       - name: Run Tests   
         run: |
           gauge run specs
