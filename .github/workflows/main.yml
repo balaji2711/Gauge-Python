@@ -24,6 +24,6 @@ jobs:
       - name: Install reports
         run: gauge install xml-report
       - name: Run Tests   
-        run: gauge run specs/
-      - name: Surefire Report
-        uses: ScaCap/action-surefire-report@v1.0.5
+        run: |
+            $gauge=$env:ProgramFiles+"\gauge\bin\gauge.exe"
+            &$gauge run specs
