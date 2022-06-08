@@ -1,10 +1,10 @@
 # Login Specification
 
-* On Login Page
+* When I navigated to Login Page
 
 ## Registered user login to the system
 
 tags: sanity
 
-* Login as "standard_user" using "secret_sauce"
-* Login should be successful
+* When I login as "standard_user" using "secret_sauce"
+* Then login should be successful
