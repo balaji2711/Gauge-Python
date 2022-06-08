@@ -24,6 +24,4 @@ jobs:
       - name: Install reports
         run: gauge install xml-report
       - name: Run Tests   
-        run: |
-            $gauge=$env:ProgramFiles+"\gauge\bin\gauge.exe"
-            &$gauge run specs
+        run: gauge run specs
