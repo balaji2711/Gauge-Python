@@ -24,5 +24,5 @@ Installation Help Documentation - https://docs.gauge.org/getting_started/install
 
 **Suppose that you have a specification file, called let say Login.spec, and you want to list all the scenarios or tags. Below command can be used :**
 
-gauge list --tags specs/login.spec // tag names
-gauge list --scenarios specs/login.spec // scenario names
+	gauge list --tags specs/login.spec
+	gauge list --scenarios specs/login.spec
