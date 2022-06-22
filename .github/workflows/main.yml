@@ -21,9 +21,9 @@ jobs:
         run: python --version
       - name: Install requirements
         run: pip install -r requirements.txt
-      - name: PowerShell script
+      - name: Execute Gauge Tests
         uses: Amadevus/pwsh-script@v2.0.1
         with:
-          script: | 
+          run: | 
             gauge install xml-report
             gauge run specs
