@@ -20,9 +20,8 @@ jobs:
       - name: Python version
         run: python --version
       - name: Install requirements
-        run: pip install -r requirements.txt
-      - name: Execute Gauge Tests
-        uses: Amadevus/pwsh-script@v2.0.1
-      - run:
-          gauge install xml-report
-          gauge run specs
+        run: pip install -r requirements.txt	
+      - name: Install reports
+        run: gauge install xml-report
+      - name: Run Tests   
+        run: gauge run specs
