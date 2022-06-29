@@ -1,5 +1,5 @@
 from getgauge.python import step
-from step_impl.hooks.hooks import Hooks
+from demo.hooks.hooks import Hooks
 
 @step("When I navigated to Login Page")
 def when_i_navigated_to_login_page():

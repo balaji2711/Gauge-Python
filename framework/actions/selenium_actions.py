@@ -7,7 +7,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support import expected_conditions as EC
 
-class SeleniumActions():
+class SeleniumActions:
     URL = os.getenv('webBaseURL')
     element = None 
     
@@ -145,3 +145,15 @@ class SeleniumActions():
             self.driver.execute_script("window.scrollTo("+str(cord_x)+", "+str(cord_y)+")")
         except NoSuchElementException:
             print('Element not found')
+    
+    def drag_and_drop(self, source_locatorType, source_locatorValue,target_locatorType, target_locatorValue):
+        try:
+            action_chains = ActionChains(self.driver)
+            source = SeleniumActions.find_element(self, source_locatorType, source_locatorValue)
+            target = SeleniumActions.find_element(self, target_locatorType, target_locatorValue)
+            action_chains.drag_and_drop_by_offset(source, 100, 100).perform()
+            time.sleep(2)
+            action_chains.drag_and_drop(source, target).perform()
+            time.sleep(2)
+        except Exception:
+            print("Can't drag and drop an element")
