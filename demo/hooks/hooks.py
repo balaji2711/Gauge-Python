@@ -17,12 +17,13 @@ headless = os.getenv('headless')
 os.environ['GH_TOKEN'] = os.getenv('ghToken')
 
 class Hooks:
-    driver = None
-    login_page = None    
+    driver = None   
 
+    def getContext():
+        return Hooks.driver  
 
 @before_spec
-def open_browser():   
+def open_browser():       
     if execute == "Ui": 
         if browserName == "chrome":
             chrome_options = Options()  
@@ -37,8 +38,7 @@ def open_browser():
             print('Browser not yet implemented - ' + browserName)
             raise Exception('Browser not yet implemented - ' + browserName)    
         Hooks.driver.maximize_window()
-        Hooks.driver.delete_all_cookies()
-        Hooks.login_page = LoginPage(Hooks.driver)             
+        Hooks.driver.delete_all_cookies()                    
 
 @after_spec
 def quit_browser(context):
