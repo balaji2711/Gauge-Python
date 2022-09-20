@@ -16,6 +16,7 @@ jobs:
         uses: Azure/powershell@v1
         with:
           inlineScript: Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+          azPSVersion: continue
           githubToken: ${{ secrets.GITHUB_TOKEN }}
       - name: Install Python
         run: choco install --no-progress --confirm python --version=3.10.0 --force
