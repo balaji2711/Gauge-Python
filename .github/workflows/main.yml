@@ -13,10 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Python
-        run: choco install python
+        run: choco install --no-progress --confirm python --version=3.10.0 --force
       - name: Install Gauge
         run: |
           npm install -g @getgauge/cli
+          choco install --no-progress --confirm gauge --force
       - name: Python version
         run: python --version
       - name: Install requirements
