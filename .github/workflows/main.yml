@@ -35,7 +35,5 @@ jobs:
         run: gauge --version
       - name: Install requirements
         run: pip install -r requirements.txt	
-      - name: Install reports
-        run: gauge install xml-report
       - name: Run Tests   
-        run: gauge run specs
+        run: gauge run .\demo\features\specs\
