@@ -38,4 +38,4 @@ jobs:
       - name: Install reports
         run: gauge install xml-report
       - name: Run Tests   
-        run: gauge run .\demo\features\specs\
+        run: gauge run specs
