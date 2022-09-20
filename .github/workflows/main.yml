@@ -22,6 +22,9 @@ jobs:
         with:
           python-version: '3.10.5'
       - name: Install Gauge
+        run: |
+          npm install -g @getgauge/cli
+          choco install --no-progress --confirm gauge --force
       - uses: getgauge/setup-gauge@master
         with:
           gauge-version: '1.4.3'
