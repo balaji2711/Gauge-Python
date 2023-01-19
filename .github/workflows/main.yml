@@ -37,3 +37,9 @@ jobs:
         run: pip install -r requirements.txt	
       - name: Run Tests   
         run: C:\"Program Files"\gauge\bin\gauge.exe run .\demo\features\specs\rest_api.spec
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: Logs
+          path: $(System.DefaultWorkingDirectory)\demo\logs
+
