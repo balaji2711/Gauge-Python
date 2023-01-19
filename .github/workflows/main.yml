@@ -36,4 +36,4 @@ jobs:
       - name: Install requirements
         run: pip install -r requirements.txt	
       - name: Run Tests   
-        run: gauge run .\demo\features\specs\rest_api.spec
+        run: C:\"Program Files"\gauge\bin\gauge.exe run .\demo\features\specs\rest_api.spec
