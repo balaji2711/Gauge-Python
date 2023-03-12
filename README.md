@@ -35,3 +35,41 @@ Installation Help Documentation - https://docs.gauge.org/getting_started/install
 
 	gauge list --tags specs/login.spec
 	gauge list --scenarios specs/login.spec
+
+**Gauge Tests Dockerization** -
+
+This is an example project that demonstrates how to Dockerize a Gauge project with Python and Requests.
+
+**Prerequisites**:
+
+To run this project, you will need to Docker installed on your machine.
+	
+**Building the Docker Image** -
+
+To build the Docker image for this project, run the following command:
+
+	docker build -t gauge-tests .
+	
+This command will create a Docker image with the name gauge-tests based on the instructions in the Dockerfile in the root directory of the project.
+
+**Running the Tests**
+To run all the specs in the project, use the following command:
+
+	docker run --rm -v <project root directory>:/app gauge-tests gauge run app/demo/features/specs
+	Example:
+	docker run --rm -v C:\Project\Python\gauge-tests:/app gauge-tests gauge run app/demo/features/specs
+
+This command will start a Docker container with the gauge-tests image and run the Gauge tests in the app/demo/features/specs directory inside the container.
+
+**To run a specific spec file, use the following command**
+
+	docker run --rm -v C:\Project\Python\gauge-tests:/app -w /app/demo gauge-tests gauge run features/specs/rest_api.spec
+	
+This command will start a Docker container with the gauge-tests image, set the working directory to app/demo, and run the rest_api.spec file inside the container.
+
+**Conclusion**
+
+With Docker, you can easily package and run Gauge projects in a consistent and isolated environment. By following the steps in this README, you should be able to Dockerize your own Gauge projects and run them anywhere with minimal setup.
+
+
+
