@@ -14,7 +14,6 @@ from framework.actions.websocket_actions import WebsocketActions
 execute = os.getenv('execute')
 browserName = os.getenv('browserName')
 headless = os.getenv('headless')
-os.environ['GH_TOKEN'] = os.getenv('ghToken')
 
 class Hooks:
     driver = None   

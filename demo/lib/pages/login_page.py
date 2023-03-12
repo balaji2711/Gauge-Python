@@ -20,6 +20,6 @@ class LoginPage(SeleniumActions):
         self.click("ID", LoginPageObjects.btnLogin)
         Messages.write_message("Clicked on login button")
 
-    def is_login_successful(self):                  
+    def is_login_successful(self):                          
         assert self.get("XPATH", LoginPageObjects.title) == "PRODUCTS", "Login is not successful"
         Messages.write_message("Login is successful")

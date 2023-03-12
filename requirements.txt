@@ -6,6 +6,8 @@ selenium
 websocket-client
 requests
 webdriver-manager
+setuptools
+wheel
 xmltodict
 pyodbc
 uuid1
