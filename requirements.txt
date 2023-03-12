@@ -7,3 +7,5 @@ websocket-client
 requests
 webdriver-manager
 xmltodict
+pyodbc
+uuid1
