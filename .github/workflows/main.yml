@@ -42,10 +42,10 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Logs
-          path: .\demo\logs
+          path: .\logs
       - name: Download artifact
         if: always()
         uses: actions/download-artifact@v2
         with:
           name: Logs
-          path: .\demo\logs
+          path: .\logs
