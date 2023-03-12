@@ -6,3 +6,4 @@ selenium
 websocket-client
 requests
 webdriver-manager
+xmltodict
